@@ -78,6 +78,7 @@ return [
     */
 
     'locale' => 'en',
+    'locale' => 'ja',
 
     /*
     |--------------------------------------------------------------------------
@@ -174,6 +175,8 @@ return [
 	\InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class, 
 	Yajra\Datatables\DatatablesServiceProvider::class,
 	Yajra\Datatables\ButtonsServiceProvider::class,
+	Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
+	\TalvBansal\MediaManager\Providers\MediaManagerServiceProvider::class,
 
         /*
          * Application Service Providers...

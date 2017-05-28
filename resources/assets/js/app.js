@@ -16,6 +16,7 @@ window.Vue = require('vue');
  */
 
 Vue.component('example', require('./components/Example.vue'));
+require('./../talvbansal/media-manager/js/media-manager');
 
 const app = new Vue({
     el: '#app'

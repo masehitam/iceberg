@@ -6,14 +6,16 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
+        "doctrine/dbal": "~2.3",
+        "infyomlabs/adminlte-templates": "5.4.x-dev",
+        "infyomlabs/laravel-generator": "5.4.x-dev",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
-        "infyomlabs/laravel-generator": "5.4.x-dev",
-	"doctrine/dbal": "~2.3",
         "laravelcollective/html": "^5.4.0",
-        "infyomlabs/adminlte-templates": "5.4.x-dev",
-        "yajra/laravel-datatables-oracle":"7.5",
-        "yajra/laravel-datatables-buttons":"1.1"
+        "spatie/laravel-medialibrary": "3.*",
+        "talvbansal/media-manager": "^2.0",
+        "yajra/laravel-datatables-buttons": "1.1",
+        "yajra/laravel-datatables-oracle": "7.5"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
