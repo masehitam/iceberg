@@ -1,0 +1,149 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "hid",
+        "dbType": "string",
+        "htmlType": "",
+        "validations": "",
+        "inForm": false,
+        "searchable": true
+    },
+    {
+        "name": "name",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required|max:255",
+        "searchable": true
+    },
+    {
+        "name": "start_date",
+        "dbType": "string",
+        "htmlType": "date",
+        "validations": "",
+        "searchable": true
+    },
+    {
+        "name": "category",
+        "relation": "1tm,category,id,id",
+        "dbType": "integer:unsigned:foreign,categories,id",
+        "htmlType": "select,0,1,2,3",
+        "validations": "required|exists:categories,id",
+        "searchable": true
+    },
+    {
+        "name": "zipcode",
+        "dbType": "string",
+        "htmlType": "zipcode",
+        "validations": "",
+        "searchable": true
+    },
+    {
+        "name": "company",
+        "dbType": "integer",
+        "htmlType": "select-db,select...:0",
+        "validations": "",
+        "searchable": true
+    },
+    {
+        "name": "pref",
+        "dbType": "integer",
+        "htmlType": "select-db,select...:0",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "address01",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required|max:255",
+        "searchable": true
+    },
+    {
+        "name": "address02",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required|max:255",
+        "searchable": true
+    },
+    {
+        "name": "level",
+        "dbType": "integer",
+        "htmlType": "select,0,1,2,3,4",
+        "validations": "",
+        "searchable": true
+    },
+    {
+        "name": "rank",
+        "dbType": "integer",
+        "htmlType": "select,0,1,2,3,4,5,6,7,8,9",
+        "validations": "",
+        "searchable": true
+    },
+    {
+        "name": "image",
+        "dbType": "string",
+        "htmlType": "file",
+        "validations": "",
+        "searchable": true
+    },
+    {
+        "name": "top_image",
+        "dbType": "string",
+        "htmlType": "file",
+        "validations": "",
+        "searchable": true
+    },
+    {
+        "name": "description",
+        "dbType": "text",
+        "htmlType": "textarea",
+        "validations": "max:30000",
+        "searchable": true
+    },
+    {
+        "name": "position",
+        "dbType": "text",
+        "htmlType": "textarea",
+        "validations": "max:30000",
+        "searchable": true
+    },
+    {
+        "name": "display_flg",
+        "dbType": "integer",
+        "htmlType": "radio,表示する:1,表示しない:0",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

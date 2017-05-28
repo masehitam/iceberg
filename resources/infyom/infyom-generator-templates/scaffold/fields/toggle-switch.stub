@@ -1,7 +1,8 @@
 <!-- 'bootstrap / Toggle Switch $FIELD_NAME_TITLE$ Field' -->
-<div class="form-group col-sm-6">
-    {!! Form::label('$FIELD_NAME$', '$FIELD_NAME_TITLE$:') !!}
+<div class="form-group col-sm-6 @if($errors->has('$FIELD_NAME$')) has-error @endif">
+    {!! Form::label('$FIELD_NAME$', __('$FIELD_NAME_TITLE$').':') !!}
     <label class="checkbox-inline">
    {!! Form::checkbox('$FIELD_NAME$', 1, true,  ['data-toggle' => 'toggle']) !!}
     </label>
+    {!! $errors->first('$FIELD_NAME$', '<span class="help-block">:message</span>') !!}
 </div>

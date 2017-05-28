@@ -6,12 +6,12 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="http://infyom.com/images/logo/blue_logo_150x150.jpg" class="img-circle"
+                <img src="//lorempixel.com/output/animals-q-c-150-150-{{ substr((Auth::user()->id * 3 / 2), -1) }}.jpg" class="img-circle"
                      alt="User Image"/>
             </div>
             <div class="pull-left info">
                 @if (Auth::guest())
-                <p>InfyOm</p>
+                <p>Iceberg</p>
                 @else
                     <p>{{ Auth::user()->name}}</p>
                 @endif

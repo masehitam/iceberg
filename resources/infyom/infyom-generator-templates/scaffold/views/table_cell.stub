@@ -1,1 +1,1 @@
-<td>{!! $$MODEL_NAME_CAMEL$->$FIELD_NAME$ !!}</td>
+<td>{!! __($$MODEL_NAME_CAMEL$->$FIELD_NAME$) !!}</td>

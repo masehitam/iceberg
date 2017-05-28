@@ -15,16 +15,79 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-\TalvBansal\MediaManager\Routes\MediaRoutes::get();
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index'); 
 
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('glide/{path}', function($path){
+    $server = \League\Glide\ServerFactory::create([
+        'source' => app('filesystem')->disk('public')->getDriver(),
+    'cache' => storage_path('glide'),
+    ]);
+    return $server->getImageResponse($path, Input::query());
+})->where('path', '.+');
+
+
+
+
+
+Route::resource('categories', 'categoryController');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Route::resource('products', 'productController');
+
+Route::resource('products', 'productController');
+
+Route::resource('products', 'productController');

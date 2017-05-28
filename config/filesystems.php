@@ -50,9 +50,11 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
+//            'root' => storage_path('app/public'),
+            'root'   => base_path().'/public',
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
+            'glideURL' => '/glide',
         ],
 
         's3' => [
@@ -61,10 +63,6 @@ return [
             'secret' => env('AWS_SECRET'),
             'region' => env('AWS_REGION'),
             'bucket' => env('AWS_BUCKET'),
-        ],
-	'media' => [
-            'driver' => 'local',
-            'root'   => public_path().'/media',
         ],
 
     ],

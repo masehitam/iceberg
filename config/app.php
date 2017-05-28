@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    //'locale' => 'en',
     'locale' => 'ja',
 
     /*
@@ -168,15 +168,16 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
-	Collective\Html\HtmlServiceProvider::class,
-	Laracasts\Flash\FlashServiceProvider::class,
-	Prettus\Repository\Providers\RepositoryServiceProvider::class,
-	\InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
-	\InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class, 
-	Yajra\Datatables\DatatablesServiceProvider::class,
-	Yajra\Datatables\ButtonsServiceProvider::class,
-	Spatie\MediaLibrary\MediaLibraryServiceProvider::class,
-	\TalvBansal\MediaManager\Providers\MediaManagerServiceProvider::class,
+		Collective\Html\HtmlServiceProvider::class,
+		Laracasts\Flash\FlashServiceProvider::class,
+		Prettus\Repository\Providers\RepositoryServiceProvider::class,
+		\InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
+		\InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class,
+		Yajra\Datatables\DatatablesServiceProvider::class,
+		Yajra\Datatables\ButtonsServiceProvider::class,
+		Zizaco\Entrust\EntrustServiceProvider::class,
+		Barryvdh\Debugbar\ServiceProvider::class,
+		Barryvdh\Elfinder\ElfinderServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -235,10 +236,10 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-	'Form'      => Collective\Html\FormFacade::class,
-	'Html'      => Collective\Html\HtmlFacade::class,
-	'Flash'     => Laracasts\Flash\Flash::class,
-
+		'Form'      => Collective\Html\FormFacade::class,
+		'Html'      => Collective\Html\HtmlFacade::class,
+		'Flash'     => Laracasts\Flash\Flash::class,
+		'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
     ],
 
 ];

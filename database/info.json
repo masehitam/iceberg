@@ -1,0 +1,98 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "title",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required|max:255",
+        "searchable": true
+    },
+    {
+        "name": "link",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "url|max:255",
+        "searchable": true
+    },
+    {
+        "name": "category",
+        "dbType": "integer",
+        "htmlType": "select,指定なし:0,ＮＥＷＳ:1,製品:2,イベント:3,お知らせ:4,その他:5",
+        "validations": "",
+        "searchable": true
+    },
+    {
+        "name": "public_date",
+        "dbType": "dateTime",
+        "htmlType": "text",
+        "validations": "required|date",
+        "searchable": true
+    },
+    {
+        "name": "start_date",
+        "dbType": "dateTime",
+        "htmlType": "text",
+        "validations": "required|date|before:end_date",
+        "searchable": true
+    },
+    {
+        "name": "end_date",
+        "dbType": "dateTime",
+        "htmlType": "text",
+        "validations": "required|date|after:start_date",
+        "searchable": true
+    },
+    {
+        "name": "body",
+        "dbType": "text",
+        "htmlType": "textarea",
+        "validations": "max:30000",
+        "searchable": true
+    },
+    {
+        "name": "display_flg",
+        "dbType": "integer",
+        "htmlType": "radio,表示する:1,表示しない:0",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "toppage_flg",
+        "dbType": "integer",
+        "htmlType": "radio,表示する:1,表示しない:0",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

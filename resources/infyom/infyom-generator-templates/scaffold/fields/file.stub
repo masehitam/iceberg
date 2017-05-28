@@ -1,6 +1,11 @@
 <!-- $FIELD_NAME_TITLE$ Field -->
-<div class="form-group col-sm-6">
+<div class="form-group col-sm-6 @if($errors->has('image')) has-error @endif">
     {!! Form::label('$FIELD_NAME$', '$FIELD_NAME_TITLE$:') !!}
-    {!! Form::file('$FIELD_NAME$') !!}
+    <div class="input-group">
+        {!! Form::text('$FIELD_NAME$', null, ['class' => 'form-control', 'for' => '$FIELD_NAME$']) !!}
+        <span class="input-group-btn">
+            <button type="button" class="btn btn-info btn-flat popup_selector" data-inputid="$FIELD_NAME$">{!! __('Browse') !!}</button>
+        </span>
+    </div>
+    {!! $errors->first('$FIELD_NAME$', '<span class="help-block">:message</span>') !!}
 </div>
-<div class="clearfix"></div>

@@ -1,8 +1,5 @@
 const { mix } = require('laravel-mix');
 
-// Copy SVG images into the public directory...
-mix.copy('resources/assets/talvbansal/media-manager/fonts/', 'public/fonts/');
-
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management

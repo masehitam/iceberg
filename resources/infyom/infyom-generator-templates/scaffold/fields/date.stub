@@ -1,5 +1,11 @@
 <!-- $FIELD_NAME_TITLE$ Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('$FIELD_NAME$', '$FIELD_NAME_TITLE$:') !!}
-    {!! Form::date('$FIELD_NAME$', null, ['class' => 'form-control']) !!}
+<div class="form-group col-sm-6 @if($errors->has('$FIELD_NAME$')) has-error @endif">
+    {!! Form::label('$FIELD_NAME$', __('$FIELD_NAME_TITLE$').':') !!}
+    <div class="input-group date">
+        <div class="input-group-addon">
+            <i class="fa fa-calendar"></i>
+        </div>
+        {!! Form::text('$FIELD_NAME$', null, ['class' => 'form-control  pull-right', 'ng-model' => 'input.$FIELD_NAME$', 'datetimepicker' => '', 'ng-click' => "calIcon('$FIELD_NAME$')"]) !!}
+    </div>
+    {!! $errors->first('$FIELD_NAME$', '<span class="help-block">:message</span>') !!}
 </div>
