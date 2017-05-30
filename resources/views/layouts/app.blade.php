@@ -44,9 +44,6 @@
             margin-top: 50px;
             border: solid 0px #ccc;
         }
-        .help-block {
-            margin-bottom: 0px;
-        }
     </style>
 
 </head>
@@ -184,6 +181,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.11/js/app.min.js"></script>
 
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script><!-- angularjs -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/riot/3.5.1/riot.min.js"></script> -->
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script><!-- jquery ui -->
 
     <script src="/js/jquery.datetimepicker.full.min.js"></script><!-- for datetimepicker -->

@@ -16,7 +16,6 @@
     </div>
     {!! $errors->first('start_date', '<span class="help-block">:message</span>') !!}
 </div>
-<div class="clearfix"></div>
 
 
 <!-- Category Field -->
@@ -43,7 +42,7 @@
         </div>
     </div>
 </div>
-<div class="clearfix"></div>
+
 
 <!-- Company Field -->
 <div class="form-group col-sm-6 @if($errors->has('company')) has-error @endif">
@@ -60,7 +59,7 @@
     {!! Form::select('pref', ['0' => 'select...'], null, ['class' => 'form-control', 'ng-model' => 'input.pref', 'ng-options' => "num as name for (num,name) in m_pref"]) !!}
     {!! $errors->first('pref', '<span class="help-block">:message</span>') !!}
 </div>
-<div class="clearfix"></div>
+
 
 
 <!-- Address01 Field -->
@@ -76,7 +75,6 @@
     {!! Form::text('address02', null, ['class' => 'form-control']) !!}
     {!! $errors->first('address02', '<span class="help-block">:message</span>') !!}
 </div>
-<div class="clearfix"></div>
 
 <!-- Level Field -->
 <div class="form-group col-sm-6 @if($errors->has('level')) has-error @endif">
@@ -93,7 +91,7 @@
     {!! Form::select('rank', ['0' => '0', '1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9'], null, ['class' => 'form-control']) !!}
     {!! $errors->first('rank', '<span class="help-block">:message</span>') !!}
 </div>
-<div class="clearfix"></div>
+
 
 
 <!-- Image Field -->
@@ -120,7 +118,7 @@
     </div>
     {!! $errors->first('top_image', '<span class="help-block">:message</span>') !!}
 </div>
-<div class="clearfix"></div>
+
 
 <!-- Description Field -->
 <div class="form-group col-sm-12 col-lg-12 @if($errors->has('description')) has-error @endif">
@@ -140,7 +138,7 @@
 <div class="form-group col-sm-12 @if($errors->has('display_flg')) has-error @endif">
     {!! Form::label('display_flg', __('Display Flg').':') !!}
     <label class="radio-inline">
-        {!! Form::radio('display_flg', "1", null, ['name' => "iCheck"]) !!} {!! __('表示する') !!}
+        {!! Form::radio('display_flg', "1", null) !!} {!! __('表示する') !!}
     </label>
 
     <label class="radio-inline">

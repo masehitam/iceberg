@@ -1,0 +1,16 @@
+[
+{"name": "id","dbType": "increments","htmlType": "","validations": "","searchable": FALSE,"fillable": FALSE,"primary": TRUE,"inForm": FALSE,"inIndex": FALSE}
+,{"name": "name","dbType": "string","htmlType": "text","validations": "","searchable": TRUE,"fillable": FALSE,"primary": FALSE,"inForm": TRUE,"inIndex": TRUE}
+,{"name": "parent_id","dbType": "integer","htmlType": "select-db,select...:0","validations": "","searchable": TRUE,"fillable": FALSE,"primary": FALSE,"inForm": TRUE,"inIndex": TRUE}
+,{"name": "level","dbType": "integer","htmlType": "select,0,1,2,3,4","validations": "","searchable": TRUE,"fillable": FALSE,"primary": FALSE,"inForm": TRUE,"inIndex": TRUE}
+,{"name": "rank","dbType": "integer","htmlType": "select,0,1,2,3,4,5,6,7,8,9","validations": "","searchable": TRUE,"fillable": FALSE,"primary": FALSE,"inForm": TRUE,"inIndex": TRUE}
+,{"name": "image","dbType": "string","htmlType": "file","validations": "","searchable": TRUE,"fillable": FALSE,"primary": FALSE,"inForm": TRUE,"inIndex": TRUE}
+,{"name": "top_image","dbType": "string","htmlType": "file","validations": "","searchable": TRUE,"fillable": FALSE,"primary": FALSE,"inForm": TRUE,"inIndex": TRUE}
+,{"name": "description","dbType": "text","htmlType": "textarea","validations": "","searchable": TRUE,"fillable": FALSE,"primary": FALSE,"inForm": TRUE,"inIndex": TRUE}
+,{"name": "position","dbType": "text","htmlType": "textarea","validations": "","searchable": TRUE,"fillable": FALSE,"primary": FALSE,"inForm": TRUE,"inIndex": TRUE}
+,{"name": "display_flg","dbType": "integer","htmlType": "radio,is_display:1,is_not_display:0","validations": "","searchable": TRUE,"fillable": FALSE,"primary": FALSE,"inForm": TRUE,"inIndex": TRUE}
+,{"name": "created_id","dbType": "integer:default,1","htmlType": "text","validations": "","searchable": FALSE,"fillable": FALSE,"primary": FALSE,"inForm": FALSE,"inIndex": FALSE}
+,{"name": "updated_id","dbType": "integer:default,1","htmlType": "text","validations": "","searchable": FALSE,"fillable": FALSE,"primary": FALSE,"inForm": FALSE,"inIndex": FALSE}
+,{"name": "created_at","dbType": "timestamp","htmlType": "","validations": "","searchable": FALSE,"fillable": FALSE,"primary": FALSE,"inForm": FALSE,"inIndex": FALSE}
+,{"name": "updated_at","dbType": "timestamp","htmlType": "","validations": "","searchable": FALSE,"fillable": FALSE,"primary": FALSE,"inForm": FALSE,"inIndex": FALSE}
+]

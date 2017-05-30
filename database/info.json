@@ -60,6 +60,13 @@
         "searchable": true
     },
     {
+        "name": "filename",
+        "dbType": "string",
+        "htmlType": "file",
+        "validations": "",
+        "searchable": true
+    },
+    {
         "name": "display_flg",
         "dbType": "integer",
         "htmlType": "radio,表示する:1,表示しない:0",
@@ -72,6 +79,18 @@
         "htmlType": "radio,表示する:1,表示しない:0",
         "validations": "required",
         "searchable": true
+    },
+    {
+        "name": "created_id",
+        "dbType": "integer",
+        "htmlType": "text",
+        "validations": ""
+    },
+    {
+        "name": "updated_id",
+        "dbType": "integer",
+        "htmlType": "text",
+        "validations": ""
     },
     {
         "name": "created_at",

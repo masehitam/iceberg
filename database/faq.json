@@ -1,0 +1,89 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "title",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "body",
+        "dbType": "text",
+        "htmlType": "textarea",
+        "validations": "",
+        "searchable": true
+    },
+    {
+        "name": "category",
+        "dbType": "integer",
+        "htmlType": "select,0:0",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "display_flg",
+        "dbType": "integer",
+        "htmlType": "radio,•\Ž¦‚·‚é:1,•\Ž¦‚µ‚È‚¢:0",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "rank",
+        "dbType": "integer",
+        "htmlType": "select,0,1,2,3,4,5,6,7,8,9",
+        "validations": "",
+        "searchable": true
+    },
+    {
+        "name": "popular",
+        "dbType": "integer",
+        "htmlType": "text",
+        "validations": "",
+        "searchable": true
+    },
+    {
+        "name": "created_id",
+        "dbType": "integer",
+        "htmlType": "text",
+        "validations": ""
+    },
+    {
+        "name": "updated_id",
+        "dbType": "integer",
+        "htmlType": "text",
+        "validations": ""
+    },
+    {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]
