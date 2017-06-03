@@ -4,12 +4,6 @@
     <p>{!! $product->id !!}</p>
 </div>
 
-<!-- Hid Field -->
-<div class="form-group">
-    {!! Form::label('hid', __('Hid').':') !!}
-    <p>{!! $product->hid !!}</p>
-</div>
-
 <!-- Name Field -->
 <div class="form-group">
     {!! Form::label('name', __('Name').':') !!}

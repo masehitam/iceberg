@@ -5,6 +5,8 @@ namespace App\Models;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+use Zizaco\Entrust\Traits\EntrustUserTrait;
+
 /**
  * Class user
  * @package App\Models
@@ -14,8 +16,10 @@ class user extends Model
 {
     use SoftDeletes;
 
+    use EntrustUserTrait;
+
     public $table = 'users';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -49,8 +53,8 @@ class user extends Model
      * @var array
      */
     public static $rules = [
-        
+
     ];
 
-    
+
 }

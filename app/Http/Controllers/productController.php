@@ -19,6 +19,7 @@ class productController extends AppBaseController
     public function __construct(productRepository $productRepo)
     {
         $this->productRepository = $productRepo;
+        parent::__construct(4);
     }
 
     /**

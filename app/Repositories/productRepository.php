@@ -11,7 +11,6 @@ class productRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
-        'hid',
         'name',
         'start_date',
         'category',

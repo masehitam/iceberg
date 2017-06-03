@@ -42,7 +42,6 @@ trait MakeproductTrait
         $fake = Faker::create();
 
         return array_merge([
-            'hid' => $fake->word,
             'name' => $fake->word,
             'start_date' => $fake->word,
             'category' => $fake->randomDigitNotNull,

@@ -25,6 +25,20 @@
         "searchable": true
     },
     {
+        "name": "zipcode",
+        "dbType": "string",
+        "htmlType": "zipcode",
+        "validations": "",
+        "searchable": true
+    },
+    {
+        "name": "image",
+        "dbType": "string",
+        "htmlType": "file",
+        "validations": "",
+        "searchable": true
+    },
+    {
         "name": "category",
         "dbType": "integer",
         "htmlType": "select,指定なし:0,ＮＥＷＳ:1,製品:2,イベント:3,お知らせ:4,その他:5",
@@ -33,22 +47,22 @@
     },
     {
         "name": "public_date",
-        "dbType": "dateTime",
-        "htmlType": "text",
-        "validations": "required|date",
+        "dbType": "string",
+        "htmlType": "date",
+        "validations": "required",
         "searchable": true
     },
     {
         "name": "start_date",
-        "dbType": "dateTime",
-        "htmlType": "text",
+        "dbType": "string",
+        "htmlType": "date",
         "validations": "required|date|before:end_date",
         "searchable": true
     },
     {
         "name": "end_date",
-        "dbType": "dateTime",
-        "htmlType": "text",
+        "dbType": "string",
+        "htmlType": "date",
         "validations": "required|date|after:start_date",
         "searchable": true
     },
@@ -57,13 +71,6 @@
         "dbType": "text",
         "htmlType": "textarea",
         "validations": "max:30000",
-        "searchable": true
-    },
-    {
-        "name": "filename",
-        "dbType": "string",
-        "htmlType": "file",
-        "validations": "",
         "searchable": true
     },
     {
@@ -81,16 +88,12 @@
         "searchable": true
     },
     {
-        "name": "created_id",
-        "dbType": "integer",
-        "htmlType": "text",
-        "validations": ""
-    },
-    {
-        "name": "updated_id",
-        "dbType": "integer",
-        "htmlType": "text",
-        "validations": ""
+        "name": "popular",
+        "dbType": "integer:nullable",
+        "htmlType": "checkbox,1",
+        "validations": "",
+        "inForm": true,
+        "searchable": true
     },
     {
         "name": "created_at",

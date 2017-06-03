@@ -72,9 +72,10 @@ class infoDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'id' => ['name' => 'id', 'title' => __('id'), 'data' => 'id'],
             'title' => ['name' => 'title', 'title' => __('title'), 'data' => 'title'],
             'link' => ['name' => 'link', 'title' => __('link'), 'data' => 'link'],
+            'zipcode' => ['name' => 'zipcode', 'title' => __('zipcode'), 'data' => 'zipcode'],
+            'image' => ['name' => 'image', 'title' => __('image'), 'data' => 'image'],
             'category' => ['name' => 'category', 'title' => __('category'), 'data' => 'category'],
             'public_date' => ['name' => 'public_date', 'title' => __('public_date'), 'data' => 'public_date'],
             'start_date' => ['name' => 'start_date', 'title' => __('start_date'), 'data' => 'start_date'],
@@ -82,10 +83,7 @@ class infoDataTable extends DataTable
             'body' => ['name' => 'body', 'title' => __('body'), 'data' => 'body'],
             'display_flg' => ['name' => 'display_flg', 'title' => __('display_flg'), 'data' => 'display_flg'],
             'toppage_flg' => ['name' => 'toppage_flg', 'title' => __('toppage_flg'), 'data' => 'toppage_flg'],
-            'important_flg' => ['name' => 'important_flg', 'title' => __('important_flg'), 'data' => 'important_flg'],
-            'delete_flg' => ['name' => 'delete_flg', 'title' => __('delete_flg'), 'data' => 'delete_flg'],
-            'created_id' => ['name' => 'created_id', 'title' => __('created_id'), 'data' => 'created_id'],
-            'updated_id' => ['name' => 'updated_id', 'title' => __('updated_id'), 'data' => 'updated_id']
+            'popular' => ['name' => 'popular', 'title' => __('popular'), 'data' => 'popular']
         ];
     }
 

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * Class info
  * @package App\Models
- * @version May 29, 2017, 11:35 am UTC
+ * @version June 3, 2017, 9:59 am UTC
  */
 class info extends Model
 {
@@ -16,17 +16,15 @@ class info extends Model
 
     public $table = 'infos';
     
-    const CREATED_AT = 'created_at';
-    const UPDATED_AT = 'updated_at';
-
 
     protected $dates = ['deleted_at'];
 
 
     public $fillable = [
-        'id',
         'title',
         'link',
+        'zipcode',
+        'image',
         'category',
         'public_date',
         'start_date',
@@ -34,10 +32,7 @@ class info extends Model
         'body',
         'display_flg',
         'toppage_flg',
-        'important_flg',
-        'delete_flg',
-        'created_id',
-        'updated_id'
+        'popular'
     ];
 
     /**
@@ -46,17 +41,18 @@ class info extends Model
      * @var array
      */
     protected $casts = [
-        'id' => 'integer',
         'title' => 'string',
         'link' => 'string',
+        'zipcode' => 'string',
+        'image' => 'string',
         'category' => 'integer',
+        'public_date' => 'string',
+        'start_date' => 'string',
+        'end_date' => 'string',
         'body' => 'string',
         'display_flg' => 'integer',
         'toppage_flg' => 'integer',
-        'important_flg' => 'integer',
-        'delete_flg' => 'integer',
-        'created_id' => 'integer',
-        'updated_id' => 'integer'
+        'popular' => 'integer'
     ];
 
     /**
@@ -65,7 +61,14 @@ class info extends Model
      * @var array
      */
     public static $rules = [
-        
+        'title' => 'required|max:255',
+        'link' => 'url|max:255',
+        'public_date' => 'required',
+        'start_date' => 'required|date|before:end_date',
+        'end_date' => 'required|date|after:start_date',
+        'body' => 'max:30000',
+        'display_flg' => 'required',
+        'toppage_flg' => 'required'
     ];
 
     

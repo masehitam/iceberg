@@ -11,31 +11,75 @@
         "inIndex": false
     },
     {
-        "name": "title",
+        "name": "hid",
         "dbType": "string",
-        "htmlType": "text",
-        "validations": "required",
+        "htmlType": "",
+        "validations": "",
+        "inForm": false,
         "searchable": true
     },
     {
-        "name": "body",
-        "dbType": "text",
-        "htmlType": "textarea",
+        "name": "name",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required|max:255",
+        "searchable": true
+    },
+    {
+        "name": "start_date",
+        "dbType": "string",
+        "htmlType": "date",
         "validations": "",
         "searchable": true
     },
     {
         "name": "category",
+        "relation": "1tm,category,id,id",
+        "dbType": "integer:unsigned:foreign,categories,id",
+        "htmlType": "select,0,1,2,3",
+        "validations": "required|exists:categories,id",
+        "searchable": true
+    },
+    {
+        "name": "zipcode",
+        "dbType": "string",
+        "htmlType": "zipcode",
+        "validations": "",
+        "searchable": true
+    },
+    {
+        "name": "company",
         "dbType": "integer",
-        "htmlType": "select,0:0",
+        "htmlType": "select-db,select...:0",
+        "validations": "",
+        "searchable": true
+    },
+    {
+        "name": "pref",
+        "dbType": "integer",
+        "htmlType": "select-db,select...:0",
         "validations": "required",
         "searchable": true
     },
     {
-        "name": "display_flg",
+        "name": "address01",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required|max:255",
+        "searchable": true
+    },
+    {
+        "name": "address02",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required|max:255",
+        "searchable": true
+    },
+    {
+        "name": "level",
         "dbType": "integer",
-        "htmlType": "radio,ï\é¶Ç∑ÇÈ:1,ï\é¶ÇµÇ»Ç¢:0",
-        "validations": "required",
+        "htmlType": "select,0,1,2,3,4",
+        "validations": "",
         "searchable": true
     },
     {
@@ -46,23 +90,39 @@
         "searchable": true
     },
     {
-        "name": "popular",
-        "dbType": "integer",
-        "htmlType": "text",
+        "name": "image",
+        "dbType": "string",
+        "htmlType": "file",
         "validations": "",
         "searchable": true
     },
     {
-        "name": "created_id",
-        "dbType": "integer",
-        "htmlType": "text",
-        "validations": ""
+        "name": "top_image",
+        "dbType": "string",
+        "htmlType": "file",
+        "validations": "",
+        "searchable": true
     },
     {
-        "name": "updated_id",
+        "name": "description",
+        "dbType": "text",
+        "htmlType": "textarea",
+        "validations": "max:30000",
+        "searchable": true
+    },
+    {
+        "name": "position",
+        "dbType": "text",
+        "htmlType": "textarea",
+        "validations": "max:30000",
+        "searchable": true
+    },
+    {
+        "name": "display_flg",
         "dbType": "integer",
-        "htmlType": "text",
-        "validations": ""
+        "htmlType": "radio,Ë°®Á§∫„Åô„Çã:1,Ë°®Á§∫„Åó„Å™„ÅÑ:0",
+        "validations": "required",
+        "searchable": true
     },
     {
         "name": "created_at",

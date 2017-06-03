@@ -16,6 +16,18 @@
     <p>{!! $info->link !!}</p>
 </div>
 
+<!-- Zipcode Field -->
+<div class="form-group">
+    {!! Form::label('zipcode', __('Zipcode').':') !!}
+    <p>{!! $info->zipcode !!}</p>
+</div>
+
+<!-- Image Field -->
+<div class="form-group">
+    {!! Form::label('image', __('Image').':') !!}
+    <p>{!! $info->image !!}</p>
+</div>
+
 <!-- Category Field -->
 <div class="form-group">
     {!! Form::label('category', __('Category').':') !!}
@@ -58,28 +70,10 @@
     <p>{!! $info->toppage_flg !!}</p>
 </div>
 
-<!-- Important Flg Field -->
+<!-- Popular Field -->
 <div class="form-group">
-    {!! Form::label('important_flg', __('Important Flg').':') !!}
-    <p>{!! $info->important_flg !!}</p>
-</div>
-
-<!-- Delete Flg Field -->
-<div class="form-group">
-    {!! Form::label('delete_flg', __('Delete Flg').':') !!}
-    <p>{!! $info->delete_flg !!}</p>
-</div>
-
-<!-- Created Id Field -->
-<div class="form-group">
-    {!! Form::label('created_id', __('Created Id').':') !!}
-    <p>{!! $info->created_id !!}</p>
-</div>
-
-<!-- Updated Id Field -->
-<div class="form-group">
-    {!! Form::label('updated_id', __('Updated Id').':') !!}
-    <p>{!! $info->updated_id !!}</p>
+    {!! Form::label('popular', __('Popular').':') !!}
+    <p>{!! $info->popular !!}</p>
 </div>
 
 <!-- Created At Field -->

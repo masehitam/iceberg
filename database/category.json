@@ -81,18 +81,6 @@
         "searchable": true
     },
     {
-        "name": "created_id",
-        "dbType": "integer",
-        "htmlType": "text",
-        "validations": ""
-    },
-    {
-        "name": "updated_id",
-        "dbType": "integer",
-        "htmlType": "text",
-        "validations": ""
-    },
-    {
         "name": "created_at",
         "dbType": "timestamp",
         "htmlType": "",

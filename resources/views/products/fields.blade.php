@@ -12,7 +12,7 @@
         <div class="input-group-addon">
             <i class="fa fa-calendar"></i>
         </div>
-        {!! Form::text('start_date', null, ['class' => 'form-control  pull-right', 'ng-model' => 'input.start_date', 'datetimepicker' => '', 'ng-click' => "calIcon('start_date')"]) !!}
+        {!! Form::text('start_date', null, ['class' => 'form-control pull-right datetimepick']) !!}
     </div>
     {!! $errors->first('start_date', '<span class="help-block">:message</span>') !!}
 </div>
@@ -37,7 +37,7 @@
         </div>
         <div class="col-xs-4">
             <span class="input-group-btn" style="padding-left:0px;">
-                 <button type="button" class="btn btn-info btn-flat" id="prefSearch" ng-click="prefSearch()">{!! __('prefSearch') !!}</button>
+                 <button type="button" class="btn btn-info btn-flat" id="prefSearch">{!! __('prefSearch') !!}</button>
             </span>
         </div>
     </div>
@@ -47,7 +47,7 @@
 <!-- Company Field -->
 <div class="form-group col-sm-6 @if($errors->has('company')) has-error @endif">
     {!! Form::label('company', __('Company').':') !!}
-    {!! Form::select('company', ['0' => 'select...'], null, ['class' => 'form-control', 'ng-model' => 'input.company', 'ng-options' => "num as name for (num,name) in m_company"]) !!}
+    {!! Form::select('company', ['0' => 'select...'], null, ['class' => 'form-control']) !!}
     {!! $errors->first('company', '<span class="help-block">:message</span>') !!}
 </div>
 
@@ -56,7 +56,7 @@
 <!-- Pref Field -->
 <div class="form-group col-sm-6 @if($errors->has('pref')) has-error @endif">
     {!! Form::label('pref', __('Pref').':') !!}
-    {!! Form::select('pref', ['0' => 'select...'], null, ['class' => 'form-control', 'ng-model' => 'input.pref', 'ng-options' => "num as name for (num,name) in m_pref"]) !!}
+    {!! Form::select('pref', ['0' => 'select...'], null, ['class' => 'form-control']) !!}
     {!! $errors->first('pref', '<span class="help-block">:message</span>') !!}
 </div>
 

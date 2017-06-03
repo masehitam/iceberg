@@ -18,7 +18,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index'); 
+Route::get('/home', 'HomeController@index');
+Route::resource('user', 'userController');
 
 
 
@@ -31,13 +32,9 @@ Route::get('glide/{path}', function($path){
 })->where('path', '.+');
 
 
-
-
-
-Route::resource('categories', 'categoryController');
-
-
-
+Route::group(['middleware' => [], 'prefix' => 'admin'], function () {
+    Route::resource('products', 'productController');
+});
 
 
 
@@ -47,47 +44,16 @@ Route::resource('categories', 'categoryController');
 
 
 
+Route::resource('infos', 'infoController');
 
+Route::resource('infos', 'infoController');
 
+Route::resource('infos', 'infoController');
 
+Route::resource('infos', 'infoController');
 
+Route::resource('infos', 'infoController');
 
+Route::resource('infos', 'infoController');
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Route::resource('products', 'productController');
-
-Route::resource('products', 'productController');
-
-Route::resource('products', 'productController');
+Route::resource('infos', 'infoController');

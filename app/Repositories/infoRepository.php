@@ -11,9 +11,10 @@ class infoRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
-        'id',
         'title',
         'link',
+        'zipcode',
+        'image',
         'category',
         'public_date',
         'start_date',
@@ -21,10 +22,7 @@ class infoRepository extends BaseRepository
         'body',
         'display_flg',
         'toppage_flg',
-        'important_flg',
-        'delete_flg',
-        'created_id',
-        'updated_id'
+        'popular'
     ];
 
     /**

@@ -72,7 +72,6 @@ class productDataTable extends DataTable
     private function getColumns()
     {
         return [
-            'hid' => ['name' => 'hid', 'title' => __('hid'), 'data' => 'hid'],
             'name' => ['name' => 'name', 'title' => __('name'), 'data' => 'name'],
             'start_date' => ['name' => 'start_date', 'title' => __('start_date'), 'data' => 'start_date'],
             'category' => ['name' => 'category', 'title' => __('category'), 'data' => 'category'],

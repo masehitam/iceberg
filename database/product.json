@@ -11,14 +11,6 @@
         "inIndex": false
     },
     {
-        "name": "hid",
-        "dbType": "string",
-        "htmlType": "",
-        "validations": "",
-        "inForm": false,
-        "searchable": true
-    },
-    {
         "name": "name",
         "dbType": "string",
         "htmlType": "text",

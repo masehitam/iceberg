@@ -18,7 +18,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::resource('planning4s', 'planning4APIController');
 
 
 
@@ -49,11 +48,40 @@ Route::resource('planning4s', 'planning4APIController');
 
 
 
+
+
+
+
+
+
+
+
+
+
+Route::resource('products', 'ProductAPIController');
 
 
 
 Route::resource('products', 'productAPIController');
 
-Route::resource('products', 'productAPIController');
 
-Route::resource('products', 'productAPIController');
+
+
+
+
+
+
+
+Route::resource('infos', 'infoAPIController');
+
+Route::resource('infos', 'infoAPIController');
+
+Route::resource('infos', 'infoAPIController');
+
+Route::resource('infos', 'infoAPIController');
+
+Route::resource('infos', 'infoAPIController');
+
+Route::resource('infos', 'infoAPIController');
+
+Route::resource('infos', 'infoAPIController');

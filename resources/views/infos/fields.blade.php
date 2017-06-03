@@ -1,10 +1,3 @@
-<!-- Id Field -->
-<div class="form-group col-sm-6 @if($errors->has('id')) has-error @endif">
-    {!! Form::label('id', __('Id').':') !!}
-    {!! Form::number('id', null, ['class' => 'form-control']) !!}
-    {!! $errors->first('id', '<span class="help-block">:message</span>') !!}
-</div>
-
 <!-- Title Field -->
 <div class="form-group col-sm-6 @if($errors->has('title')) has-error @endif">
     {!! Form::label('title', __('Title').':') !!}
@@ -19,12 +12,44 @@
     {!! $errors->first('link', '<span class="help-block">:message</span>') !!}
 </div>
 
+<!-- Zipcode Field -->
+<div class="form-group col-sm-6 @if($errors->has('zipcode')) has-error @endif">
+    {!! Form::label('zipcode', __('Zipcode').':') !!}
+
+	<div clss="input-group">
+        <div class="col-xs-8" style="padding-left:0;">
+            {!! Form::text('zipcode', null, ['class' => 'form-control', 'data-inputmask' => "'mask': '999-9999'"]) !!}
+        </div>
+        <div class="col-xs-4">
+            <span class="input-group-btn" style="padding-left:0px;">
+                 <button type="button" class="btn btn-info btn-flat" id="prefSearch">{!! __('prefSearch') !!}</button>
+            </span>
+        </div>
+    </div>
+</div>
+
+
+<!-- Image Field -->
+<div class="form-group col-sm-6 @if($errors->has('image')) has-error @endif">
+    {!! Form::label('image', 'Image:') !!}
+    <div class="input-group">
+        {!! Form::text('image', null, ['class' => 'form-control', 'for' => 'image']) !!}
+        <span class="input-group-btn">
+            <button type="button" class="btn btn-info btn-flat popup_selector" data-inputid="image">{!! __('Browse') !!}</button>
+        </span>
+    </div>
+    {!! $errors->first('image', '<span class="help-block">:message</span>') !!}
+</div>
+
+
 <!-- Category Field -->
 <div class="form-group col-sm-6 @if($errors->has('category')) has-error @endif">
     {!! Form::label('category', __('Category').':') !!}
-    {!! Form::number('category', null, ['class' => 'form-control']) !!}
+    {!! Form::select('category', ['0' => '指定なし', '1' => 'ＮＥＷＳ', '2' => '製品', '3' => 'イベント', '4' => 'お知らせ', '5' => 'その他'], null, ['class' => 'form-control', 'multiple' => '']) !!}
     {!! $errors->first('category', '<span class="help-block">:message</span>') !!}
 </div>
+
+
 
 <!-- Public Date Field -->
 <div class="form-group col-sm-6 @if($errors->has('public_date')) has-error @endif">
@@ -33,7 +58,7 @@
         <div class="input-group-addon">
             <i class="fa fa-calendar"></i>
         </div>
-        {!! Form::text('public_date', null, ['class' => 'form-control  pull-right', 'ng-model' => 'input.public_date', 'datetimepicker' => '', 'ng-click' => "calIcon('public_date')"]) !!}
+        {!! Form::text('public_date', null, ['class' => 'form-control  pull-right datetimepick']) !!}
     </div>
     {!! $errors->first('public_date', '<span class="help-block">:message</span>') !!}
 </div>
@@ -46,7 +71,7 @@
         <div class="input-group-addon">
             <i class="fa fa-calendar"></i>
         </div>
-        {!! Form::text('start_date', null, ['class' => 'form-control  pull-right', 'ng-model' => 'input.start_date', 'datetimepicker' => '', 'ng-click' => "calIcon('start_date')"]) !!}
+        {!! Form::text('start_date', null, ['class' => 'form-control  pull-right datetimepick']) !!}
     </div>
     {!! $errors->first('start_date', '<span class="help-block">:message</span>') !!}
 </div>
@@ -59,7 +84,7 @@
         <div class="input-group-addon">
             <i class="fa fa-calendar"></i>
         </div>
-        {!! Form::text('end_date', null, ['class' => 'form-control  pull-right', 'ng-model' => 'input.end_date', 'datetimepicker' => '', 'ng-click' => "calIcon('end_date')"]) !!}
+        {!! Form::text('end_date', null, ['class' => 'form-control  pull-right datetimepick']) !!}
     </div>
     {!! $errors->first('end_date', '<span class="help-block">:message</span>') !!}
 </div>
@@ -73,45 +98,41 @@
 </div>
 
 <!-- Display Flg Field -->
-<div class="form-group col-sm-6 @if($errors->has('display_flg')) has-error @endif">
+<div class="form-group col-sm-12 @if($errors->has('display_flg')) has-error @endif">
     {!! Form::label('display_flg', __('Display Flg').':') !!}
-    {!! Form::number('display_flg', null, ['class' => 'form-control']) !!}
-    {!! $errors->first('display_flg', '<span class="help-block">:message</span>') !!}
+    <label class="radio-inline">
+        {!! Form::radio('display_flg', "1", null) !!} {!! __('表示する') !!}
+    </label>
+
+    <label class="radio-inline">
+        {!! Form::radio('display_flg', "0", null) !!} {!! __('表示しない') !!}
+    </label>
+
+{!! $errors->first('display_flg', '<span class="help-block">:message</span>') !!}
 </div>
 
 <!-- Toppage Flg Field -->
-<div class="form-group col-sm-6 @if($errors->has('toppage_flg')) has-error @endif">
+<div class="form-group col-sm-12 @if($errors->has('toppage_flg')) has-error @endif">
     {!! Form::label('toppage_flg', __('Toppage Flg').':') !!}
-    {!! Form::number('toppage_flg', null, ['class' => 'form-control']) !!}
-    {!! $errors->first('toppage_flg', '<span class="help-block">:message</span>') !!}
+    <label class="radio-inline">
+        {!! Form::radio('toppage_flg', "1", null) !!} {!! __('表示する') !!}
+    </label>
+
+    <label class="radio-inline">
+        {!! Form::radio('toppage_flg', "0", null) !!} {!! __('表示しない') !!}
+    </label>
+
+{!! $errors->first('toppage_flg', '<span class="help-block">:message</span>') !!}
 </div>
 
-<!-- Important Flg Field -->
-<div class="form-group col-sm-6 @if($errors->has('important_flg')) has-error @endif">
-    {!! Form::label('important_flg', __('Important Flg').':') !!}
-    {!! Form::number('important_flg', null, ['class' => 'form-control']) !!}
-    {!! $errors->first('important_flg', '<span class="help-block">:message</span>') !!}
-</div>
-
-<!-- Delete Flg Field -->
-<div class="form-group col-sm-6 @if($errors->has('delete_flg')) has-error @endif">
-    {!! Form::label('delete_flg', __('Delete Flg').':') !!}
-    {!! Form::number('delete_flg', null, ['class' => 'form-control']) !!}
-    {!! $errors->first('delete_flg', '<span class="help-block">:message</span>') !!}
-</div>
-
-<!-- Created Id Field -->
-<div class="form-group col-sm-6 @if($errors->has('created_id')) has-error @endif">
-    {!! Form::label('created_id', __('Created Id').':') !!}
-    {!! Form::number('created_id', null, ['class' => 'form-control']) !!}
-    {!! $errors->first('created_id', '<span class="help-block">:message</span>') !!}
-</div>
-
-<!-- Updated Id Field -->
-<div class="form-group col-sm-6 @if($errors->has('updated_id')) has-error @endif">
-    {!! Form::label('updated_id', __('Updated Id').':') !!}
-    {!! Form::number('updated_id', null, ['class' => 'form-control']) !!}
-    {!! $errors->first('updated_id', '<span class="help-block">:message</span>') !!}
+<!-- Popular Field -->
+<div class="form-group col-sm-6 @if($errors->has('popular')) has-error @endif">
+    {!! Form::label('popular', __('Popular').':') !!}
+    <label class="checkbox-inline">
+        {!! Form::hidden('popular', false) !!}
+        {!! Form::checkbox('popular', '1', null) !!} {!! __('popular1') !!}
+    </label>
+    {!! $errors->first('popular', '<span class="help-block">:message</span>') !!}
 </div>
 
 <!-- Submit Field -->

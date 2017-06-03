@@ -168,16 +168,17 @@ return [
          * Package Service Providers...
          */
         Laravel\Tinker\TinkerServiceProvider::class,
-		Collective\Html\HtmlServiceProvider::class,
-		Laracasts\Flash\FlashServiceProvider::class,
-		Prettus\Repository\Providers\RepositoryServiceProvider::class,
-		\InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
-		\InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class,
-		Yajra\Datatables\DatatablesServiceProvider::class,
-		Yajra\Datatables\ButtonsServiceProvider::class,
-		Zizaco\Entrust\EntrustServiceProvider::class,
-		Barryvdh\Debugbar\ServiceProvider::class,
-		Barryvdh\Elfinder\ElfinderServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
+        Prettus\Repository\Providers\RepositoryServiceProvider::class,
+        \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
+        \InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class,
+        Yajra\Datatables\DatatablesServiceProvider::class,
+        Yajra\Datatables\ButtonsServiceProvider::class,
+        Zizaco\Entrust\EntrustServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
+        Barryvdh\Elfinder\ElfinderServiceProvider::class,
+        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -187,6 +188,31 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        // Load library
+//       Pms\Library\LibraryServiceProvider::class,
+//       // Load function
+///        Pms\Analysis\AnalysisServiceProvider::class,
+///        Pms\Catalog\CatalogServiceProvider::class,
+//       Pms\Category\CategoryServiceProvider::class,
+///        Pms\Contact\ContactServiceProvider::class,
+///        Pms\Contents\ContentsServiceProvider::class,
+//       Pms\Core\CoreServiceProvider::class,
+//       Pms\Dashboard\DashboardServiceProvider::class,
+///        Pms\Docsearch\DocsearchServiceProvider::class,
+///        Pms\Faq\FaqServiceProvider::class,
+///        Pms\Feed\FeedServiceProvider::class,
+///        Pms\Form2\Form2ServiceProvider::class,
+///        Pms\Frame\FrameServiceProvider::class,
+///        Pms\Import\ImportServiceProvider::class,
+///        Pms\Info\InfoServiceProvider::class,
+///        Pms\Maintenance\MaintenanceServiceProvider::class,
+///        Pms\Member\MemberServiceProvider::class,
+///        Pms\Product\ProductServiceProvider::class,
+///        Pms\Seminar\SeminarServiceProvider::class,
+///        Pms\Sync\SyncServiceProvider::class,
+//       Pms\User\UserServiceProvider::class,
+///        Pms\Docreview\DocreviewServiceProvider::class,
 
     ],
 
@@ -236,10 +262,24 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-		'Form'      => Collective\Html\FormFacade::class,
-		'Html'      => Collective\Html\HtmlFacade::class,
-		'Flash'     => Laracasts\Flash\Flash::class,
-		'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+        'Form'      => Collective\Html\FormFacade::class,
+        'Html'      => Collective\Html\HtmlFacade::class,
+        'Flash'     => Laracasts\Flash\Flash::class,
+        'Entrust'   => Zizaco\Entrust\EntrustFacade::class,
+
+         /*
+         * TCI Framework load
+         */
+         // Load library
+//         'Barcode'      => Pms\Library\Barcode::class,
+//         'Feed'         => Pms\Library\Feed::class,
+//         'Image'        => Pms\Library\Image::class,
+//         'OAuth'        => Pms\Library\OAuth::class,
+//         'Qrcode'       => Pms\Library\Qrcode::class,
+//         'Sendmail'     => Pms\Library\Sendmail::class,
+//         'StaticPage'   => Pms\Library\StaticPage::class,
+//         'Thumbnail'    => Pms\Library\Thumbnail::class,
+//         'TwitterOauth' => Pms\Library\twitteroauth::class,
     ],
 
 ];

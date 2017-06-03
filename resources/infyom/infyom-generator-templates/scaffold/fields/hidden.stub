@@ -1,0 +1,2 @@
+<!-- $FIELD_NAME_TITLE$ Field -->
+{!! Form::hidden('$FIELD_NAME$', $input['$FIELD_NAME$']) !!}

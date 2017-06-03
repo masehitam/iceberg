@@ -1,0 +1,138 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "name",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required|max:255”,
+        "inForm": true,
+        "searchable": true
+    },
+    {
+        "name": "subtitle",
+        "dbType": “string,25",
+        "htmlType": "text",
+        "validations": "required|max:255”,
+        "inForm": true,
+        "searchable": true
+    },
+   {
+        "name": "position",
+        "dbType": "text",
+        "htmlType": "textarea",
+        "validations": "max:30000”,
+        "inForm": true,
+        "searchable": true
+    },
+    {
+        "name": “email",
+        "dbType": “string",
+        "htmlType": "email",
+        "validations": "required|max:255”,
+        "inForm": true,
+        "searchable": true
+    },
+    {
+        "name": "start_date",
+        "dbType": "string",
+        "htmlType": "date",
+        "validations": “",
+        "inForm": true,
+        "searchable": true
+    },
+    {
+        "name": “number",
+        "dbType": “integer",
+        "htmlType": “number",
+        "validations": “",
+        "inForm": true,
+        "searchable": true
+    },
+    {
+        "name": "zipcode",
+        "dbType": "string",
+        "htmlType": "zipcode",
+        "validations": “",
+        "inForm": true,
+        "searchable": true
+    },
+    {
+        "name": “password",
+        "dbType": “string",
+        "htmlType": “password",
+        "validations": "required”,
+        "inForm": true,
+        "searchable": false
+    },
+    {
+        "name": "image",
+        "dbType": "string",
+        "htmlType": "file",
+        "validations": "",
+        "inForm": true,
+        "searchable": true
+    },
+    {
+        "name": “category",
+        "dbType": "integer",
+        "htmlType": “select,none:0,one:1,two:2,three:3,four:4",
+        "validations": “exists:categories,id",
+        "inForm": true,
+        "searchable": true
+    },
+    {
+        "name": "pref",
+        "dbType": "integer",
+        "htmlType": "select-db,select...:0",
+        "validations": "required”,
+        "inForm": true,
+        "searchable": true
+    },
+    {
+        "name": “popular",
+        "dbType": "integer",
+        "htmlType": “checkbox,yes:1,no:0",
+        "validations": "required”,
+        "inForm": true,
+        "searchable": true
+    },
+    {
+        "name": "display_flg",
+        "dbType": "integer",
+        "htmlType": "radio,表示する:1,表示しない:0",
+        "validations": "required",
+        "searchable": true
+    },
+    {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

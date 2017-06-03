@@ -5,7 +5,7 @@
         <div class="input-group-addon">
             <i class="fa fa-calendar"></i>
         </div>
-        {!! Form::text('$FIELD_NAME$', null, ['class' => 'form-control  pull-right', 'ng-model' => 'input.$FIELD_NAME$', 'datepicker' => '', 'ng-click' => "calIcon('$FIELD_NAME$')"]) !!}
+        {!! Form::text('$FIELD_NAME$', null, ['class' => 'form-control  pull-right datetimepick']) !!}
     </div>
     {!! $errors->first('$FIELD_NAME$', '<span class="help-block">:message</span>') !!}
 </div>
