@@ -1,21 +1,21 @@
 [
 {"name": "id","dbType": "increments","htmlType": "","validations": "","searchable": FALSE,"fillable": TRUE,"primary": TRUE,"inForm": FALSE,"inIndex": FALSE}
-,{"name": "type","dbType": "integer:unsigned","htmlType": "select,none:0,one:1,two:2,three:3,four:4","validations": "","searchable": TRUE,"fillable": TRUE,"primary": FALSE,"inForm": TRUE,"inIndex": TRUE}
+,{"name": "type","dbType": "integer:unsigned","htmlType": "select,none:0,one:1,two:2,three:3,four:4","validations": "","searchable": FALSE,"fillable": TRUE,"primary": FALSE,"inForm": TRUE,"inIndex": FALSE}
 ,{"name": "title","dbType": "string","htmlType": "text","validations": "","searchable": TRUE,"fillable": TRUE,"primary": FALSE,"inForm": TRUE,"inIndex": TRUE}
 ,{"name": "start_date","dbType": "string","htmlType": "date","validations": "","searchable": TRUE,"fillable": TRUE,"primary": FALSE,"inForm": TRUE,"inIndex": TRUE}
 ,{"name": "end_date","dbType": "string","htmlType": "date","validations": "","searchable": TRUE,"fillable": TRUE,"primary": FALSE,"inForm": TRUE,"inIndex": TRUE}
 ,{"name": "image","dbType": "string:nullable","htmlType": "file","validations": "","searchable": TRUE,"fillable": TRUE,"primary": FALSE,"inForm": TRUE,"inIndex": TRUE}
-,{"name": "limit_cnt","dbType": "integer:unsigned:nullable","htmlType": "text","validations": "","searchable": TRUE,"fillable": TRUE,"primary": FALSE,"inForm": TRUE,"inIndex": FALSE}
-,{"name": "body","dbType": "text:nullable","htmlType": "textarea","validations": "","searchable": TRUE,"fillable": TRUE,"primary": FALSE,"inForm": TRUE,"inIndex": FALSE}
-,{"name": "mail_title","dbType": "string:nullable","htmlType": "text","validations": "","searchable": TRUE,"fillable": TRUE,"primary": FALSE,"inForm": TRUE,"inIndex": FALSE}
-,{"name": "mail_body","dbType": "text:nullable","htmlType": "textarea","validations": "","searchable": TRUE,"fillable": TRUE,"primary": FALSE,"inForm": TRUE,"inIndex": FALSE}
-,{"name": "send_flg","dbType": "integer:unsigned:default,1","htmlType": "checkbox,1,0","validations": "","searchable": TRUE,"fillable": TRUE,"primary": FALSE,"inForm": TRUE,"inIndex": FALSE}
-,{"name": "comp_msg","dbType": "text:nullable","htmlType": "textarea","validations": "","searchable": TRUE,"fillable": TRUE,"primary": FALSE,"inForm": TRUE,"inIndex": FALSE}
-,{"name": "aliase","dbType": "string,500","htmlType": "text","validations": "","searchable": TRUE,"fillable": TRUE,"primary": FALSE,"inForm": TRUE,"inIndex": FALSE}
-,{"name": "display_flg","dbType": "integer:unsigned:default,0","htmlType": "radio,is_display:1,is_not_display:0","validations": "","searchable": TRUE,"fillable": TRUE,"primary": FALSE,"inForm": TRUE,"inIndex": FALSE}
-,{"name": "ad_tag","dbType": "string:nullable","htmlType": "textarea","validations": "","searchable": TRUE,"fillable": TRUE,"primary": FALSE,"inForm": TRUE,"inIndex": FALSE}
-,{"name": "created_id","dbType": "integer:unsigned:default,1","htmlType": "text","validations": "","searchable": FALSE,"fillable": TRUE,"primary": FALSE,"inForm": FALSE,"inIndex": FALSE}
-,{"name": "updated_id","dbType": "integer:unsigned:default,1","htmlType": "text","validations": "","searchable": FALSE,"fillable": TRUE,"primary": FALSE,"inForm": FALSE,"inIndex": FALSE}
+,{"name": "limit_cnt","dbType": "integer:unsigned:nullable","htmlType": "text","validations": "","searchable": FALSE,"fillable": TRUE,"primary": FALSE,"inForm": TRUE,"inIndex": FALSE}
+,{"name": "body","dbType": "text:nullable","htmlType": "textarea","validations": "","searchable": FALSE,"fillable": FALSE,"primary": FALSE,"inForm": TRUE,"inIndex": FALSE}
+,{"name": "mail_title","dbType": "string:nullable","htmlType": "text","validations": "","searchable": FALSE,"fillable": FALSE,"primary": FALSE,"inForm": TRUE,"inIndex": FALSE}
+,{"name": "mail_body","dbType": "text:nullable","htmlType": "textarea","validations": "","searchable": FALSE,"fillable": FALSE,"primary": FALSE,"inForm": TRUE,"inIndex": FALSE}
+,{"name": "send_flg","dbType": "integer:unsigned:default,1","htmlType": "checkbox,1,0","validations": "","searchable": FALSE,"fillable": FALSE,"primary": FALSE,"inForm": TRUE,"inIndex": FALSE}
+,{"name": "comp_msg","dbType": "text:nullable","htmlType": "textarea","validations": "","searchable": FALSE,"fillable": FALSE,"primary": FALSE,"inForm": TRUE,"inIndex": FALSE}
+,{"name": "aliase","dbType": "string,500","htmlType": "text","validations": "","searchable": FALSE,"fillable": FALSE,"primary": FALSE,"inForm": TRUE,"inIndex": FALSE}
+,{"name": "display_flg","dbType": "integer:unsigned:default,0","htmlType": "radio,is_display:1,is_not_display:0","validations": "","searchable": FALSE,"fillable": FALSE,"primary": FALSE,"inForm": TRUE,"inIndex": FALSE}
+,{"name": "ad_tag","dbType": "string:nullable","htmlType": "textarea","validations": "","searchable": FALSE,"fillable": FALSE,"primary": FALSE,"inForm": TRUE,"inIndex": FALSE}
+,{"name": "created_id","dbType": "integer:unsigned:default,1","htmlType": "text","validations": "","searchable": FALSE,"fillable": FALSE,"primary": FALSE,"inForm": FALSE,"inIndex": FALSE}
+,{"name": "updated_id","dbType": "integer:unsigned:default,1","htmlType": "text","validations": "","searchable": FALSE,"fillable": FALSE,"primary": FALSE,"inForm": FALSE,"inIndex": FALSE}
 ,{"name": "created_at","dbType": "timestamp","htmlType": "","validations": "","searchable": FALSE,"fillable": TRUE,"primary": FALSE,"inForm": FALSE,"inIndex": FALSE}
 ,{"name": "updated_at","dbType": "timestamp","htmlType": "","validations": "","searchable": FALSE,"fillable": TRUE,"primary": FALSE,"inForm": FALSE,"inIndex": FALSE}
 ]

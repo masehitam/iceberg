@@ -21,7 +21,7 @@
         <div class="input-group-addon">
             <i class="fa fa-calendar"></i>
         </div>
-        {!! Form::text('start_date', null, ['class' => 'form-control  pull-right', 'ng-model' => 'input.start_date', 'datetimepicker' => '', 'ng-click' => "calIcon('start_date')"]) !!}
+        {!! Form::text('start_date', null, ['class' => 'form-control  pull-right', 'datepicker' => '']) !!}
     </div>
     {!! $errors->first('start_date', '<span class="help-block">:message</span>') !!}
 </div>
@@ -34,7 +34,7 @@
         <div class="input-group-addon">
             <i class="fa fa-calendar"></i>
         </div>
-        {!! Form::text('end_date', null, ['class' => 'form-control  pull-right', 'ng-model' => 'input.end_date', 'datetimepicker' => '', 'ng-click' => "calIcon('end_date')"]) !!}
+        {!! Form::text('end_date', null, ['class' => 'form-control  pull-right', 'datepicker' => '']) !!}
     </div>
     {!! $errors->first('end_date', '<span class="help-block">:message</span>') !!}
 </div>
@@ -63,7 +63,7 @@
 <!-- Body Field -->
 <div class="form-group col-sm-12 col-lg-12 @if($errors->has('body')) has-error @endif">
     {!! Form::label('body', __('Body').':') !!}
-    {!! Form::textarea('body', null, ['class' => 'wysiwyg form-control']) !!}
+    {!! Form::textarea('body', null, ['class' => 'form-control']) !!}
     {!! $errors->first('body', '<span class="help-block">:message</span>') !!}
 </div>
 
@@ -77,7 +77,7 @@
 <!-- Mail Body Field -->
 <div class="form-group col-sm-12 col-lg-12 @if($errors->has('mail_body')) has-error @endif">
     {!! Form::label('mail_body', __('Mail Body').':') !!}
-    {!! Form::textarea('mail_body', null, ['class' => 'wysiwyg form-control']) !!}
+    {!! Form::textarea('mail_body', null, ['class' => 'form-control']) !!}
     {!! $errors->first('mail_body', '<span class="help-block">:message</span>') !!}
 </div>
 
@@ -94,7 +94,7 @@
 <!-- Comp Msg Field -->
 <div class="form-group col-sm-12 col-lg-12 @if($errors->has('comp_msg')) has-error @endif">
     {!! Form::label('comp_msg', __('Comp Msg').':') !!}
-    {!! Form::textarea('comp_msg', null, ['class' => 'wysiwyg form-control']) !!}
+    {!! Form::textarea('comp_msg', null, ['class' => 'form-control']) !!}
     {!! $errors->first('comp_msg', '<span class="help-block">:message</span>') !!}
 </div>
 
@@ -122,7 +122,7 @@
 <!-- Ad Tag Field -->
 <div class="form-group col-sm-12 col-lg-12 @if($errors->has('ad_tag')) has-error @endif">
     {!! Form::label('ad_tag', __('Ad Tag').':') !!}
-    {!! Form::textarea('ad_tag', null, ['class' => 'wysiwyg form-control']) !!}
+    {!! Form::textarea('ad_tag', null, ['class' => 'form-control']) !!}
     {!! $errors->first('ad_tag', '<span class="help-block">:message</span>') !!}
 </div>
 
