@@ -6,7 +6,6 @@ use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 use Zizaco\Entrust\Traits\EntrustUserTrait;
-use Cmgmyr\Messenger\Traits\Messagable;
 
 /**
  * Class user
@@ -15,9 +14,6 @@ use Cmgmyr\Messenger\Traits\Messagable;
  */
 class user extends Model
 {
-
-    use Messagable;
-
     use SoftDeletes;
 
     use EntrustUserTrait;

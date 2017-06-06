@@ -57,3 +57,13 @@ Route::resource('infos', 'infoController');
 Route::resource('infos', 'infoController');
 
 Route::resource('infos', 'infoController');
+
+
+
+
+
+
+
+
+
+Route::resource('sample3s', 'Sample3Controller');

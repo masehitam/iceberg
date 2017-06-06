@@ -85,3 +85,13 @@ Route::resource('infos', 'infoAPIController');
 Route::resource('infos', 'infoAPIController');
 
 Route::resource('infos', 'infoAPIController');
+
+
+
+
+
+
+
+
+
+Route::resource('sample3s', 'Sample3APIController');

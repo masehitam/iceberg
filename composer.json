@@ -17,7 +17,8 @@
         "laravelcollective/html": "^5.4.0",
         "yajra/laravel-datatables-buttons": "^1.0",
         "yajra/laravel-datatables-oracle": "^7.5",
-        "zizaco/entrust": "5.2.x-dev"
+        "zizaco/entrust": "5.2.x-dev",
+        "cmgmyr/messenger": "~2.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
