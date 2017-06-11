@@ -1,0 +1,27 @@
+--- ./vendor/infyomlabs/laravel-generator/src/Utils/HTMLFieldGenerator.php	2017-06-11 22:30:41.000000000 +0900
++++ ./vendor/infyomlabs/laravel-generator/src/Utils/HTMLFieldGenerator.php	2017-06-03 19:28:01.000000000 +0900
+@@ -17,6 +17,7 @@
+             case 'file':
+             case 'email':
+             case 'password':
++            case 'zipcode':
+                 $fieldTemplate = get_template('scaffold.fields.'.$field->htmlType, $templateType);
+                 break;
+             case 'number':
+@@ -33,6 +34,16 @@
+                     $fieldTemplate
+                 );
+                 break;
++            case 'select-db':
++                $fieldTemplate = get_template('scaffold.fields.'.$field->htmlType, $templateType);
++                $radioLabels = GeneratorFieldsInputUtil::prepareKeyValueArrFromLabelValueStr($field->htmlValues);
++
++                $fieldTemplate = str_replace(
++                    '$INPUT_ARR$',
++                    GeneratorFieldsInputUtil::prepareKeyValueArrayStr($radioLabels),
++                    $fieldTemplate
++                );
++                break;
+             case 'checkbox':
+                 $fieldTemplate = get_template('scaffold.fields.checkbox', $templateType);
+                 if (count($field->htmlValues) > 0) {
