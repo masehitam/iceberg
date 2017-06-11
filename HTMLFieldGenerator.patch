@@ -1,4 +1,4 @@
---- ./vendor/infyomlabs/laravel-generator/src/Utils/HTMLFieldGenerator.php	2017-06-11 22:30:41.000000000 +0900
+--- test.php	2017-06-11 22:30:41.000000000 +0900
 +++ ./vendor/infyomlabs/laravel-generator/src/Utils/HTMLFieldGenerator.php	2017-06-03 19:28:01.000000000 +0900
 @@ -17,6 +17,7 @@
              case 'file':
