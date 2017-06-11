@@ -1,0 +1,232 @@
+<div class="contRight">
+    <article>
+        <h2 class="mainTitle">サンプル情報新規登録</h2>
+        <div class="bread"><a ng-click="changePage('list')">サンプル情報管理</a> &gt; 新規登録</div>
+        <p>入力後「登録」ボタンを押してください。</p>
+
+        <form novalidate name="inputForm" ng-submit="submit()" enctype="multipart/form-data">
+            <div class="form_err" ng-show="message != ''">
+                <ul>
+                    <li><a href="#">システムエラーが発生しました。</a></li>
+                    <li><a href="#">ブラウザを閉じて再度やり直していただくか、時間を空けて再度お試しください。</a></li>
+                    <li><a href="#">エラー内容：『{{message}}』</a></li>
+                </ul>
+            </div>
+            <table>
+                <tr>
+                    <th>メールアドレス</th>
+                    <td ng-class="{'err': inputForm.mail.$invalid}">
+                        <input class="long" placeholder="例）test@example.com" name="mail" type="text" value=""
+                               ng-model="input.mail" ng-model-options="{ debounce: 500 }" required ng-pattern="email" ng-minlength="3" ng-maxlength="30">
+                        <p class="help-block">ログイン時に利用するIDとなります。</p>
+                        <p class="err_txt" ng-show="!inputForm.mail.$untouched && inputForm.mail.$error.required">{{m_message.required}}</p>
+                        <p class="err_txt" ng-show="inputForm.mail.$error.minlength">{{m_message.min | replace: '%s':'3'}}}}</p>
+                        <p class="err_txt" ng-show="inputForm.mail.$error.maxlength">{{m_message.max | replace: '%s':'30'}}</p>
+                        <p class="err_txt" ng-show="inputForm.mail.$error.pattern">{{m_message.email}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>氏名</th>
+                    <td ng-class="{'err': inputForm.name01.$invalid}">
+                        <input class="long" placeholder="例）山田　太郎" name="name01" type="text" value=""
+                               ng-model="input.name01" ng-model-options="{ debounce: 500 }" required ng-minlength="3" ng-maxlength="50">
+                        <p class="err_txt" ng-show="!inputForm.name01.$untouched && inputForm.name01.$error.required">{{m_message.required}}</p>
+                        <p class="err_txt" ng-show="inputForm.name01.$error.minlength">{{m_message.min | replace: '%s':'3'}}}}</p>
+                        <p class="err_txt" ng-show="inputForm.name01.$error.maxlength">{{m_message.max | replace: '%s':'50'}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>氏名（カナ）</th>
+                    <td ng-class="{'err': inputForm.kana01.$invalid}">
+                        <input class="long" placeholder="例）ヤマダ　タロウ" name="kana01" type="text" value=""
+                               ng-model="input.kana01" ng-model-options="{ debounce: 500 }" required ng-pattern="katakana" ng-minlength="3" ng-maxlength="50">
+                        <span class="rule">※カタカナ</span>
+                        <p class="err_txt" ng-show="!inputForm.kana01.$untouched && inputForm.kana01.$error.required">{{m_message.required}}</p>
+                        <p class="err_txt" ng-show="inputForm.kana01.$error.minlength">{{m_message.min | replace: '%s':'3'}}</p>
+                        <p class="err_txt" ng-show="inputForm.kana01.$error.maxlength">{{m_message.max | replace: '%s':'50'}}</p>
+                        <p class="err_txt" ng-show="inputForm.kana01.$error.pattern">{{m_message.katakana}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>ログインパスワード</th>
+                    <td ng-class="{'err': inputForm.password.$invalid || inputForm.password_confirmation.$invalid}">
+                        <input class="short" name="password" type="password" value=""
+                               ng-model="input.password" ng-model-options="{ debounce: 500 }" required ng-minlength="6" ng-maxlength="20">
+                        <span class="rule">※6～20文字</span>
+                        <p>確認のためもう一度入力してください。</p>
+                        <input class="short" name="password_confirmation" type="password" value=""
+                               ng-model="input.password_confirmation" ng-model-options="{ debounce: 500 }" required
+                               same-as='input.password' ng-minlength="6" ng-maxlength="20">
+                        <p class="err_txt" ng-show="!inputForm.password.$untouched && (inputForm.password.$error.required || inputForm.password_confirmation.$error.required)">{{m_message.required}}</p>
+                        <p class="err_txt" ng-show="inputForm.password.$error.minlength">{{m_message.min | replace: '%s':'6'}}</p>
+                        <p class="err_txt" ng-show="inputForm.password.$error.maxlength">{{m_message.max | replace: '%s':'20'}}</p>
+                        <p class="err_txt" ng-show="!inputForm.password.$error.required && inputForm.password_confirmation.$error.sameAs">{{m_message.same}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>ステータス</th>
+                    <td ng-class="{'err': inputForm.status.$invalid}">
+                        <label ng-repeat="(status_id, status_name) in m_status">
+                            <input type="radio" value="{{status_id}}" ng-model="input.status"
+                                   ng-model-options="{ debounce: 500 }" name="status" ng-required="!input.status">{{status_name}}&nbsp;
+                        </label>
+                        <p class="err_txt" ng-show="!inputForm.status.$untouched && inputForm.status.$error.required">{{m_message.required}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>テーマ</th>
+                    <td ng-class="{'err': inputForm.theme.$invalid}">
+                        <select class="form-control" ng-model="input.theme" ng-options="theme for theme in themes"
+                                name="theme" ng-model-options="{ debounce: 500 }" ng-required="true">
+                            <option value="">選択してください</option>
+                        </select>
+                        <p class="err_txt" ng-show="!inputForm.theme.$untouched && inputForm.theme.$error.required">{{m_message.required}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>郵便番号</th>
+                    <td ng-class="{'err': inputForm.zipcode1.$invalid || inputForm.zipcode2.$invalid}">
+                        <input class="ultrashort" name="zipcode1" type="text" value=""
+                               ng-model="input.zipcode1" ng-model-options="{ debounce: 500 }" required ng-minlength="3" ng-maxlength="3" ng-pattern="zipcode1"> -
+                        <input class="ultrashort" name="zipcode2" type="text" value=""
+                               ng-model="input.zipcode2" ng-model-options="{ debounce: 500 }" required ng-minlength="4" ng-maxlength="4" ng-pattern="zipcode2">
+                        <input type="button" value="住所検索" id="prefSearch" class="btn_base"
+                               ng-click="inputForm.zipcode1.$valid && inputForm.zipcode2.$valid && prefSearch()">
+                        <p class="err_txt" ng-show="(!inputForm.zipcode1.$untouched || !inputForm.zipcode2.$untouched) && (inputForm.zipcode1.$error.required || inputForm.zipcode2.$error.required)">{{m_message.required}}</p>
+                        <p class="err_txt" ng-show="inputForm.zipcode1.$error.pattern || inputForm.zipcode2.$error.pattern">{{m_message.zipcode}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>都道府県</th>
+                    <td ng-class="{'err': inputForm.pref.$invalid}">
+                        <select class="form-control" name="pref" ng-model="input.pref"
+                                ng-options="num as name for (num,name) in m_pref" ng-model-options="{ debounce: 500 }" required>
+                            <option value="">選択してください</option>
+                        </select>
+                        <p class="err_txt" ng-show="!inputForm.pref.$untouched && inputForm.pref.$error.required">{{m_message.required}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>市区町村、番地以降</th>
+                    <td ng-class="{'err': inputForm.addr.$invalid}">
+                        <input class="long" name="addr" type="text" value=""
+                               ng-model="input.addr" ng-model-options="{ debounce: 500 }" required ng-minlength="3" ng-maxlength="50">
+                        <p class="err_txt" ng-show="!inputForm.addr.$untouched && inputForm.addr.$error.required">{{m_message.required}}</p>
+                        <p class="err_txt" ng-show="inputForm.addr.$error.maxlength">{{m_message.max | replace: '%s':'50'}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>プロフィール画像</th>
+                    <td ng-class="{'err': inputForm.image.$invalid}">
+                        <p><img class="thumbnail" ng-if="input.imageSrc" ng-src="{{input.imageSrc}}" style="max-width: 90px"></p>
+                        <input type="file" file-model="image" ng-model="input.image" name="image"
+                               ng-model-options="{ debounce: 1000 }" accept="image/*" maxsize=1048576>
+                        <input type="hidden" ng-model="input.image_filename" name="image_filename" value="{{input.imageFilename}}">
+                        <p class="err_txt" ng-show="!inputForm.image.$untouched && inputForm.image.$error.required">{{m_message.required}}</p>
+                        <p class="err_txt" ng-show="inputForm.image.$error.maxsize">{{m_message.size}}</p>
+                        <p class="err_txt" ng-show="inputForm.image.$error.filetype">{{m_message.accept}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>名刺データPDF</th>
+                    <td ng-class="{'err': inputForm.card.$invalid}">
+                        <p ng-show=input.cardSrc><i class="fa fa-file-pdf-o alert-warning"></i>&nbsp;{{input.cardSrc}}</p>
+                        <input type="file" file-model="card" ng-model="input.card" name="card"
+                               ng-model-options="{ debounce: 1000 }" accept="application/pdf" maxsize=1048576>
+                        <input type="hidden" ng-model="input.card_filename" name="card_filename" value="{{input.cardFilename}}">
+                        <p class="err_txt" ng-show="!inputForm.card.$untouched && inputForm.card.$error.required">{{m_message.required}}</p>
+                        <p class="err_txt" ng-show="inputForm.card.$error.maxsize">{{m_message.size}}</p>
+                        <p class="err_txt" ng-show="inputForm.card.$error.filetype">{{m_message.accept}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>表示フラグ</th>
+                    <td>
+                        <label ng-repeat="flg in displayFlg">
+                            <input type="checkbox" ng-model="input.display_flg" ng-model-options="{ debounce: 500 }"
+                                   ng-false-value="false" ng-true-value="true" name="display_flg">{{flg}}
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>ご利用の端末</th>
+                    <td ng-class="{'err': !input.tablet || (input.tablet[99] && inputForm.other_tablet.$invalid)}">
+                        <label ng-repeat="(m_tablet_id, m_tablet_name) in m_tablet">
+                          <input type="checkbox" name="tablet" ng-model="input.tablet[m_tablet_id]"
+                                 ng-model-options="{ debounce: 500 }" ng-required="input.tablet" ng-change="someSelected()">{{m_tablet_name}}&nbsp;
+                          <input ng-show="m_tablet_id == 99" class="veryshort" name="other_tablet" type="text"
+                                 value="" ng-model="input.other_tablet" ng-required="input.tablet[99]" ng-disabled="!input.tablet[99]"
+                                 ng-false-value="false" ng-true-value="true"
+                                 ng-model-options="{ debounce: 500 }" ng-maxlength="50">
+                        </label>
+                        <p class="err_txt" ng-if="inputForm.tablet.$touched && !input.tablet">{{m_message.required}}</p>
+                        <p class="err_txt" ng-show="inputForm.other_tablet.$error.required">{{m_message.cx_tablet}}</p>
+                        <p class="err_txt" ng-show="inputForm.other_tablet.$error.maxlength">{{m_message.max | replace: '%s':'50'}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>タグ</th>
+                    <td ng-class="{'err': inputForm.tag.$invalid}">
+                        <tags-input name="tag" ng-model="input.tag" ng-model-options="{ debounce: 500 }" required></tags-input>
+                        <p class="err_txt" ng-show="!inputForm.tag.$untouched && inputForm.tag.$error.required">{{m_message.required}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>公開日</th>
+                    <td ng-class="{'err': inputForm.public_date.$invalid}">
+                        <input class="short datepick" name="public_date" type="text"
+                               ng-model="input.public_date" ng-model-options="{ debounce: 500 }" datepicker required>
+                        <p class="err_txt" ng-show="!inputForm.public_date.$untouched && inputForm.public_date.$error.required">{{m_message.required}}</p>
+                        <p class="err_txt" ng-show="inputForm.public_date.$error.dateCheck">{{m_message.date}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>イベント開始日時</th>
+                    <td ng-class="{'err': inputForm.start_date.$invalid}">
+                        <input id="start_date" class="short datetimepick" name="start_date" type="text"
+                               ng-model="input.start_date" ng-model-options="{ debounce: 500 }"
+                               datetimepicker required><img id="cal_icon_start_date" ng-click="calIcon('start_date')" class="ui-datetimepicker-trigger" src="./img/mark_cal.png" alt="..." title="...">
+                        <p class="err_txt" ng-show="!inputForm.start_date.$untouched && inputForm.start_date.$error.required">{{m_message.required}}</p>
+                        <p class="err_txt" ng-show="inputForm.start_date.$error.dateCheck">{{m_message.date}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>自己紹介</th>
+                    <td ng-class="{'err': inputForm.body.$invalid}">
+                        <textarea name="body" class="wysiwyg form-control" cols="30" rows="5"
+                                  ui-tinymce="tinymceOptions" ng-model-options="{ debounce: 500 }"
+                                  ng-model="input.body" required></textarea>
+                        <p class="err_txt" ng-show="!inputForm.body.$untouched && inputForm.body.$error.required">{{m_message.required}}</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th>補足</th>
+                    <td ng-class="{'err': inputForm.description.$invalid}">
+                        <textarea name="description" class="form-control" cols="30" rows="3"
+                                  ng-model="input.description" ng-model-options="{ debounce: 500 }"
+                                  ng-maxlength="500" ng-change="wordCount()" required></textarea>
+                        <span class="rule" style="color: #666;" ng-show="inputForm.description.$valid">{{input.description.length + '文字'}}</span>
+                        <p class="err_txt" ng-show="!inputForm.description.$untouched && inputForm.description.$error.required">{{m_message.required}}</p>
+                        <p class="err_txt" ng-show="inputForm.description.$error.maxlength">{{m_message.max | replace: '%s':'500'}}</p>
+                    </td>
+                </tr>
+            </table>
+            <div class="btnColumn">
+                <p class="rule"><i class="fa fa-exclamation-circle alert-warning"></i>&nbsp;「入力内容を確認する」ボタンをクリックすると、新規ウィンドウで確認画面を表示します。</p>
+                <a class="btn_small" href="#previewModal" options="options" animated-modal>入力内容を確認する</a>
+            </div>
+            <div class="btnColumn">
+                <input class="btn_imp" type="submit" value="登　録" ng-disabled="!inputForm.$invalid">
+                <p class="rule"><i class="fa fa-exclamation-circle alert-warning"></i>&nbsp;必須項目を全て入力いただくと、「登録」ボタンが押せるようになります。</p>
+            </div>
+        </form>
+        <!--preview modal-->
+        <div id="previewModal">
+            <span class="close-previewModal">×</span>
+            <div class="modal-content">
+              <!--Your modal content goes here-->
+              <pre style="color:white; padding: 50px 50px 50px 50px;">{{input|json}}</pre>
+            </div>
+         </div>
+    </article>
+</div>

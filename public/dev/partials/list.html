@@ -1,0 +1,92 @@
+<div class="contRight">
+    <article>
+        <header>
+            <h2 class="mainTitle">サンプル情報管理</h2>
+            <form name="frmNew">
+                <input type="button" value="新規作成" ng-click="changePage('input')" class="btn_imp">
+            </form>
+        </header>
+        <div class="form_err" ng-show="bigTotalItems > '10000'">
+            <ul>
+                <li>結果が{{bigTotalItems | number}}件あるため、初めの10万件を表示しています。</li>
+                <li>検索条件を指定してください。</li>
+            </ul>
+        </div>
+        <table>
+                <tr>
+                    <th>キーワード</th>
+                    <td>
+                        <input class="long" placeholder="例）キーワード" name="query" ng-model-options="{ debounce: 500 }"
+                               type="text" value="" ng-model="input.query" ng-change="search()">
+                    </td>
+                </tr>
+        </table>
+    </article>
+    <article>
+        <header>
+            <h2 class="mainTitle">検索結果
+                <span id="search_info">検索結果：全<b> {{totalItems | number}} </b>件</span>
+            </h2>
+            <div class="divr">
+                <form name="frmSeach2">
+                    <select id="changeViewCount" ng-model="input.count" ng-change="changeCount(input.count)">
+                        <option value="">表示件数</option>
+                        <option value="10">10</option>
+                        <option value="30">30</option>
+                        <option value="50">50</option>
+                        <option value="100">100</option>
+                    </select>
+                </form>
+                <!--<div class="btn">
+                    <a href="?sortable=" class="btn_base sort_on">表示順の変更</a>
+                </div>-->
+            </div>
+        </header>
+
+        <div class="btnColumn pnone" id="sortchange-button">
+        </div>
+        <table class="displayTable">
+            <tr>
+                <th>表示順</th>
+                <th class="th_number" ng-click="sortBy('number')">ID&nbsp;<i class="fa fa-sort"></i></th>
+                <th class="th_mail"><a ng-click="sortBy('mail')" style="text-decoration: none;">メールアドレス&nbsp;<i class="fa fa-sort"></i></a></th>
+                <th class="th_name01"><a ng-click="sortBy('name01')" style="text-decoration: none;">氏名&nbsp;<i class="fa fa-sort"></i></a></th>
+                <th class="th_status"><a ng-click="sortBy('status')" style="text-decoration: none;">ステータス&nbsp;<i class="fa fa-sort"></i></a></th>
+                <th class="th_theme"><a ng-click="sortBy('theme')" style="text-decoration: none;">テーマ&nbsp;<i class="fa fa-sort"></i></a></th>
+                <th>操作</th>
+            </tr>
+
+            <tbody ng-repeat="(num, row) in pagedItems[input.currentPage] | orderBy:sortingOrder:reverse">
+            <tr id="row-{{row.number}}">
+                <td class="td_sort">&nbsp;<i id="change-{{row.number}}" class="fa fa-cog alert-warning" style='display:none;'></i></td>
+                <td>{{row.number}}</td>
+                <td>{{row.mail}}</td>
+                <td>{{row.name01}}</td>
+                <td>{{row.status}}</td>
+                <td>{{row.theme}}</td>
+                <td class="menu">
+                    <a ng-click="changePage('edit')" class="icon_edit">編集</a>
+                    <a class="icon_batsu" confirmed-click="removeUser(row.number)" ng-confirm-click="本当に削除してもよろしいですか？">削除</a>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+        <input id="sort_array" name="sort_array" type="hidden" value="">
+        <div class="btnColumn pnone" id="sortchange-button">
+            <div class="sort_txt">
+                <p class="rule">
+                    <i class="fa fa-cog alert-warning"></i>&nbsp;「表示順を変更する」ボタンをクリックするまで、このテーブルでの変更は保存されません。
+                </p>
+                <input class="btn_imp" type="submit" value="表示順を変更する">
+            </div>
+        </div>
+
+        <!-- pager -->
+        <ul uib-pagination boundary-links="true" total-items="totalItems" ng-model="input.currentPage" items-per-page="itemsPerPage"
+            max-size="maxSize" class="pagination pagination-sm" ng-change="pageChanged(input.currentPage)"
+            previous-text="&lsaquo;" next-text="&rsaquo;" first-text="&laquo;" last-text="&raquo;" style="margin-top: 10px;">
+        </ul>
+    </article>
+
+</div>

@@ -1,120 +1,16 @@
 [
-    {
-        "name": "id",
-        "dbType": "increments",
-        "htmlType": "",
-        "validations": "",
-        "searchable": false,
-        "fillable": false,
-        "primary": true,
-        "inForm": false,
-        "inIndex": false
-    },
-    {
-        "name": "title",
-        "dbType": "string",
-        "htmlType": "text",
-        "validations": "required|max:255",
-        "searchable": true
-    },
-    {
-        "name": "link",
-        "dbType": "string",
-        "htmlType": "text",
-        "validations": "url|max:255",
-        "searchable": true
-    },
-    {
-        "name": "zipcode",
-        "dbType": "string",
-        "htmlType": "zipcode",
-        "validations": "",
-        "searchable": true
-    },
-    {
-        "name": "image",
-        "dbType": "string",
-        "htmlType": "file",
-        "validations": "",
-        "searchable": true
-    },
-    {
-        "name": "category",
-        "dbType": "integer",
-        "htmlType": "select,指定なし:0,ＮＥＷＳ:1,製品:2,イベント:3,お知らせ:4,その他:5",
-        "validations": "",
-        "searchable": true
-    },
-    {
-        "name": "public_date",
-        "dbType": "string",
-        "htmlType": "date",
-        "validations": "required",
-        "searchable": true
-    },
-    {
-        "name": "start_date",
-        "dbType": "string",
-        "htmlType": "date",
-        "validations": "required|date|before:end_date",
-        "searchable": true
-    },
-    {
-        "name": "end_date",
-        "dbType": "string",
-        "htmlType": "date",
-        "validations": "required|date|after:start_date",
-        "searchable": true
-    },
-    {
-        "name": "body",
-        "dbType": "text",
-        "htmlType": "textarea",
-        "validations": "max:30000",
-        "searchable": true
-    },
-    {
-        "name": "display_flg",
-        "dbType": "integer",
-        "htmlType": "radio,表示する:1,表示しない:0",
-        "validations": "required",
-        "searchable": true
-    },
-    {
-        "name": "toppage_flg",
-        "dbType": "integer",
-        "htmlType": "radio,表示する:1,表示しない:0",
-        "validations": "required",
-        "searchable": true
-    },
-    {
-        "name": "popular",
-        "dbType": "integer:nullable",
-        "htmlType": "checkbox,1",
-        "validations": "",
-        "inForm": true,
-        "searchable": true
-    },
-    {
-        "name": "created_at",
-        "dbType": "timestamp",
-        "htmlType": "",
-        "validations": "",
-        "searchable": false,
-        "fillable": false,
-        "primary": false,
-        "inForm": false,
-        "inIndex": false
-    },
-    {
-        "name": "updated_at",
-        "dbType": "timestamp",
-        "htmlType": "",
-        "validations": "",
-        "searchable": false,
-        "fillable": false,
-        "primary": false,
-        "inForm": false,
-        "inIndex": false
-    }
+{""name"": ""id"",""dbType"": ""increments"",""htmlType"": """",""validations"": """",""searchable"": FALSE,""fillable"": FALSE,""primary"": TRUE,""inForm"": FALSE,""inIndex"": FALSE}
+,{""name"": ""name"",""dbType"": ""string:nullable"",""htmlType"": ""text"",""validations"": ""required|max:255"",""searchable"": TRUE,""fillable"": TRUE,""primary"": FALSE,""inForm"": TRUE,""inIndex"": TRUE}
+,{""name"": ""parent_id"",""dbType"": ""integer:unsigned:default,0"",""htmlType"": ""select,0,1,2,3,4"",""validations"": ""required|numeric"",""searchable"": FALSE,""fillable"": TRUE,""primary"": FALSE,""inForm"": TRUE,""inIndex"": FALSE}
+,{""name"": ""level"",""dbType"": ""integer:unsigned:default,0"",""htmlType"": ""select,0,1,2,3,4"",""validations"": ""required|numeric"",""searchable"": FALSE,""fillable"": TRUE,""primary"": FALSE,""inForm"": TRUE,""inIndex"": FALSE}
+,{""name"": ""rank"",""dbType"": ""integer:unsigned:default,0"",""htmlType"": ""select,0,1,2,3,4,5,6,7,8,9"",""validations"": ""required|numeric"",""searchable"": FALSE,""fillable"": TRUE,""primary"": FALSE,""inForm"": TRUE,""inIndex"": FALSE}
+,{""name"": ""image"",""dbType"": ""string:nullable"",""htmlType"": ""file"",""validations"": """",""searchable"": FALSE,""fillable"": TRUE,""primary"": FALSE,""inForm"": TRUE,""inIndex"": FALSE}
+,{""name"": ""top_image"",""dbType"": ""string:nullable"",""htmlType"": ""file"",""validations"": """",""searchable"": FALSE,""fillable"": TRUE,""primary"": FALSE,""inForm"": TRUE,""inIndex"": TRUE}
+,{""name"": ""description"",""dbType"": ""text:nullable"",""htmlType"": ""textarea"",""validations"": """",""searchable"": FALSE,""fillable"": TRUE,""primary"": FALSE,""inForm"": TRUE,""inIndex"": FALSE}
+,{""name"": ""position"",""dbType"": ""text:nullable"",""htmlType"": ""textarea"",""validations"": """",""searchable"": FALSE,""fillable"": TRUE,""primary"": FALSE,""inForm"": TRUE,""inIndex"": FALSE}
+,{""name"": ""display_flg"",""dbType"": ""integer:unsigned:default,0"",""htmlType"": ""radio,is_display:1,is_not_display:0"",""validations"": ""required|numeric"",""searchable"": TRUE,""fillable"": TRUE,""primary"": FALSE,""inForm"": TRUE,""inIndex"": TRUE}
+,{""name"": ""created_id"",""dbType"": ""integer:default,1"",""htmlType"": ""text"",""validations"": """",""searchable"": FALSE,""fillable"": FALSE,""primary"": FALSE,""inForm"": FALSE,""inIndex"": FALSE}
+,{""name"": ""updated_id"",""dbType"": ""integer:default,1"",""htmlType"": ""text"",""validations"": """",""searchable"": FALSE,""fillable"": FALSE,""primary"": FALSE,""inForm"": FALSE,""inIndex"": FALSE}
+,{""name"": ""created_at"",""dbType"": ""timestamp"",""htmlType"": """",""validations"": """",""searchable"": FALSE,""fillable"": TRUE,""primary"": FALSE,""inForm"": FALSE,""inIndex"": FALSE}
+,{""name"": ""updated_at"",""dbType"": ""timestamp"",""htmlType"": """",""validations"": """",""searchable"": FALSE,""fillable"": TRUE,""primary"": FALSE,""inForm"": FALSE,""inIndex"": FALSE}
 ]

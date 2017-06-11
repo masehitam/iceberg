@@ -1,0 +1,20 @@
+<div class="contLeft">
+    <article>
+        <header class="mainHeader">
+            <h1>PMS Backend System</h1>
+            <time id="auto_time">{{now | date:'yyyy年MM月dd日 hh:mm:ss ' | lowercase}}</time>
+            <p>管理者名：<a href="">山田</a></p>
+        </header>
+        <nav>
+            <ul>
+                <li><a ng-click="changePage('index')" >トップページ</a></li>
+                <li><p>サンプル情報管理</p>
+                    <ul>
+                        <li><a ng-click="changePage('list')">サンプル情報管理</a></li>
+                    </ul>
+                </li>
+                <li class="logout"><a ng-click="logout()">ログアウト</a></li>
+            </ul>
+        </nav>
+    </article>
+</div>

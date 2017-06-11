@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="ROBOTS" content="NOINDEX,NOFOLLOW,NOARCHIVE">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+
+    <!-- Core CSS - Include with every page -->
+    <link href="./css/reset.css" rel="stylesheet"><!-- by me -->
+    <link href="./css/common-2.css" rel="stylesheet"><!-- by me -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet"><!-- for jqury ui -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/ng-tags-input/3.1.1/ng-tags-input.min.css" rel="stylesheet"><!-- for tag-input -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/jquery-datetimepicker/2.5.4/build/jquery.datetimepicker.min.css" rel="stylesheet"><!-- for tag-input -->
+    <link href="./css/animate.min.css" rel="stylesheet"><!-- for modal -->
+
+    <style type="text/css">
+      body {display:none;};
+      tags-input .tags .tag-item {
+        background: #eee;
+      }
+      tags-input .tags {
+        -webkit-border-radius: 3px;
+      }
+      .close-previewModal {
+          cursor: pointer;
+          font-weight: bold;
+          font-size: 40px;
+          color: #fff;
+          float: right;
+      }
+      .modal-content {
+          width: 600px;
+          margin: 0 auto;
+          margin-top: 50px;
+          border: solid 0px #ccc;
+      }
+    </style>
+
+    <!-- Core JS - Include with every page -->
+    <script src="//code.jquery.com/jquery-3.1.1.min.js"></script><!-- jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script><!-- angularjs -->
+    <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script><!-- angularjs -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script><!-- jquery ui -->
+    <!-- Custom styles for this template -->
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script><!-- for wysiwyg editor -->
+    <script src="./js/jquery.datetimepicker.full.min.js"></script><!-- for datetimepicker -->
+    <script src="./js/animatedModal.min.js"></script><!-- for animated modal editor -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.4.0/ui-bootstrap.min.js"></script><!-- by me -->
+    <script data-require="ui-bootstrap@*" data-semver="1.3.2" src="https://cdn.rawgit.com/angular-ui/bootstrap/gh-pages/ui-bootstrap-tpls-1.3.2.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ng-tags-input/3.1.1/ng-tags-input.min.js"></script><!-- for tag-input -->
+
+    <script src="./js/common.js"></script><!-- by me -->
+    <script>
+      // datepicker setting.
+      $(function($){
+        $.datepicker.regional['ja'] = {
+          closeText: '閉じる',
+          prevText: '&#x3C;前',
+          nextText: '次&#x3E;',
+          currentText: '今日',
+          monthNames: ['1月','2月','3月','4月','5月','6月',
+          '7月','8月','9月','10月','11月','12月'],
+          monthNamesShort: ['1月','2月','3月','4月','5月','6月',
+          '7月','8月','9月','10月','11月','12月'],
+          dayNames: ['日曜日','月曜日','火曜日','水曜日','木曜日','金曜日','土曜日'],
+          dayNamesShort: ['日','月','火','水','木','金','土'],
+          dayNamesMin: ['日','月','火','水','木','金','土'],
+          weekHeader: '週',
+          dateFormat: 'yy/mm/dd',
+          firstDay: 0,
+          isRTL: false,
+          showMonthAfterYear: true,
+          yearSuffix: '年'};
+        $.datepicker.setDefaults($.datepicker.regional['ja']);
+      });
+      // the setting of filemanager in wysiwyg editor
+      function RoxyFileBrowser(field_name, url, type, win) {
+        var roxyFileman = './fileman/index.html';
+        if (roxyFileman.indexOf("?") < 0) {
+          roxyFileman += "?type=" + type;
+        }
+        else {
+          roxyFileman += "&type=" + type;
+        }
+        roxyFileman += '&input=' + field_name + '&value=' + win.document.getElementById(field_name).value;
+        if(tinyMCE.activeEditor.settings.language){
+          roxyFileman += '&langCode=' + tinyMCE.activeEditor.settings.language;
+        }
+        tinyMCE.activeEditor.windowManager.open({
+           file: roxyFileman,
+           title: 'ファイルマネージャー',
+           width: 750,
+           height: 450,
+           resizable: "yes",
+           plugins: "media",
+           inline: "yes",
+           close_previous: "no"
+        },
+        {
+          window: win,
+          input: field_name
+        });
+        return false;
+      }
+
+      $(document).ready(function(){
+        $('body').fadeIn('slow');
+      });
+    </script>
+
+  </head>
+  <body ng-app="app" ng-controller="mainController">
+
+    <div id="top" class="wrap">
+      <div ng-include="'partials/sidebar.html'"></div>
+      <div ui-view></div>
+    </div>
+
+    <div ng-include="'partials/footer.html'"></div>
+
+    <!-- // top page -->
+    <script id="index.html" type="text/ng-template">
+      <div ng-include="'partials/index.html'"></div>
+    </script>
+
+    <!-- // sample input page -->
+    <script id="input.html" type="text/ng-template">
+      <div ng-include="'partials/input.html'"></div>
+    </script>
+    <!-- // sample input complete page -->
+    <script id="input_complete.html" type="text/ng-template">
+      <div ng-include="'partials/input_complete.html'"></div>
+    </script>
+    <!-- // sample edit page -->
+    <script id="edit.html" type="text/ng-template">
+      <div ng-include="'partials/edit.html'"></div>
+    </script>
+    <!-- // sample edit complete page -->
+    <script id="edit_complete.html" type="text/ng-template">
+      <div ng-include="'partials/edit_complete.html'"></div>
+    </script>
+    <!-- // sample list page -->
+    <script id="list.html" type="text/ng-template">
+      <div ng-include="'partials/list.html'"></div>
+    </script>
+
+  </body>
+</html>

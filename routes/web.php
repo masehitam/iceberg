@@ -32,9 +32,6 @@ Route::get('glide/{path}', function($path){
 })->where('path', '.+');
 
 
-Route::group(['middleware' => [], 'prefix' => 'admin'], function () {
-    Route::resource('products', 'productController');
-});
 
 
 
@@ -44,19 +41,6 @@ Route::group(['middleware' => [], 'prefix' => 'admin'], function () {
 
 
 
-Route::resource('infos', 'infoController');
-
-Route::resource('infos', 'infoController');
-
-Route::resource('infos', 'infoController');
-
-Route::resource('infos', 'infoController');
-
-Route::resource('infos', 'infoController');
-
-Route::resource('infos', 'infoController');
-
-Route::resource('infos', 'infoController');
 
 
 
@@ -66,4 +50,36 @@ Route::resource('infos', 'infoController');
 
 
 
-Route::resource('sample3s', 'Sample3Controller');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

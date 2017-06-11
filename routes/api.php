@@ -58,11 +58,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 
 
-Route::resource('products', 'ProductAPIController');
-
-
-
-Route::resource('products', 'productAPIController');
 
 
 
@@ -72,19 +67,6 @@ Route::resource('products', 'productAPIController');
 
 
 
-Route::resource('infos', 'infoAPIController');
-
-Route::resource('infos', 'infoAPIController');
-
-Route::resource('infos', 'infoAPIController');
-
-Route::resource('infos', 'infoAPIController');
-
-Route::resource('infos', 'infoAPIController');
-
-Route::resource('infos', 'infoAPIController');
-
-Route::resource('infos', 'infoAPIController');
 
 
 
@@ -94,4 +76,45 @@ Route::resource('infos', 'infoAPIController');
 
 
 
-Route::resource('sample3s', 'Sample3APIController');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
